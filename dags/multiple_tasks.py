@@ -17,7 +17,7 @@ def run_example_taskflow():
             "firstName": "Random",
             "surName": "Guy"
         }
-        return json.dumps(sample_data)
+        return sample_data
         
     @task(multiple_outputs=True)
     def getLocationDetails():
@@ -25,7 +25,7 @@ def run_example_taskflow():
             "country": "Brazil",
             "city": "Sao Paulo"
         }
-        return json.dumps(sample_data)
+        return sample_data
 
     @task()
     def showProfile(firstName, surName, country, city):
