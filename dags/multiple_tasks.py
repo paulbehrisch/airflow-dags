@@ -31,8 +31,8 @@ def run_example_taskflow():
     def showProfile(firstName):
         print(firstName)
 
-    person = getPersonDetails()
-    loc = getLocationDetails()
+    person = json.loads(getPersonDetails())
+    # loc = getLocationDetails()
     showProfile(
        firstName=person['firstName'],
     )
