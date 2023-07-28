@@ -26,7 +26,7 @@ def run_example_taskflow():
 
     @task()
     def showProfile(firstName, surName, country, city):
-        print(f"{firstName} {surName} lives in {city}, {country}"
+        print(f"{firstName} {surName} lives in {city}, {country}")
 
     person = getPersonDetails()
     loc = getLocationDetails()
