@@ -25,19 +25,15 @@ def run_example_taskflow():
         }
 
     @task()
-    def showProfile(firstName, surName, country, city):
-        print(f"{firstName} {surName} lives in {city}, {country}")
+    def showProfile(firstName):
+        #print(f"{firstName} {surName} lives in {city}, {country}")
+        print(firstName)
 
     person = getPersonDetails()
-    print(person)
-    print(person["firstName"])
-    #loc = getLocationDetails()
-    #showProfile(
-    #   firstName=person["firstName"],
-    #   surName=person["surName"],
-    #   country=loc["country"],
-    #   city=loc["city"]
-    #)
+    loc = getLocationDetails()
+    showProfile(
+       firstName=person['firstName'],
+    )
 
  
 run_example_taskflow()
