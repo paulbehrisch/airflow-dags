@@ -28,13 +28,16 @@ def run_example_taskflow(multiple_outputs=True):
         return json.dumps(sample_data)
 
     @task()
-    def showProfile(firstName):
-        print(firstName)
+    def showProfile(firstName, surName, country, city):
+        print(f"{firstName} {surName} lives in {city}, {country}")
 
     person = getPersonDetails()
-    # loc = getLocationDetails()
+    loc = getLocationDetails()
     showProfile(
-       firstName=person,
+       firstName=person['firstName'],
+       surName=person['surName'],
+       country=loc['country'],
+       city=loc['city']
     )
 
  
