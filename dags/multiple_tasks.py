@@ -31,10 +31,10 @@ def run_example_taskflow():
     def showProfile(firstName):
         print(firstName)
 
-    person = json.loads(getPersonDetails())
+    person = getPersonDetails()
     # loc = getLocationDetails()
     showProfile(
-       firstName=person['firstName'],
+       firstName=person.output,
     )
 
  
