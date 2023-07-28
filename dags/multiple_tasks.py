@@ -1,4 +1,5 @@
 import pendulum
+import json
 
 from airflow.decorators import dag, task
 
@@ -12,21 +13,22 @@ from airflow.decorators import dag, task
 def run_example_taskflow():
     @task()
     def getPersonDetails():
-        return {
+        sample_data = {
             "firstName": "Random",
             "surName": "Guy"
         }
+       return json.dumps(sample_data)
         
     @task()
     def getLocationDetails():
-        return {
+        sample_data =  {
             "country": "Brazil",
             "city": "Sao Paulo"
         }
+       return json.dumps(sample_data)
 
     @task()
     def showProfile(firstName):
-        #print(f"{firstName} {surName} lives in {city}, {country}")
         print(firstName)
 
     person = getPersonDetails()
