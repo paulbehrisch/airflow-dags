@@ -34,7 +34,7 @@ def run_example_taskflow(multiple_outputs=True):
     person = getPersonDetails()
     # loc = getLocationDetails()
     showProfile(
-       firstName=person.output,
+       firstName=person,
     )
 
  
