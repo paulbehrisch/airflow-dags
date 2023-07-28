@@ -17,7 +17,7 @@ def run_example_taskflow():
             "surName": "Guy"
         }
         
-    @task
+    @task()
     def getLocationDetails():
         return {
             "country": "Brazil",
@@ -26,7 +26,8 @@ def run_example_taskflow():
 
     @task()
     def showProfile(firstName, surName, country, city):
-        print(f"{firstName} {surName} lives in {city}, {country}")
+        description = f"{firstName} {surName} lives in {city}, {country}"
+        return description
 
     person = getPersonDetails()
     loc = getLocationDetails()
