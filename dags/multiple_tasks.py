@@ -26,7 +26,7 @@ def run_example_taskflow():
 
     @task()
     def showProfile(firstName, surName, country, city):
-        description = f"{firstName} {surName} lives in {city}, {country}"
+        description = f"{{firstName}} {{surName}} lives in {{city}}, {{country}}"
         return description
 
     person = getPersonDetails()
