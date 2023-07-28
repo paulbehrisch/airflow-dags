@@ -10,8 +10,8 @@ from airflow.decorators import dag, task
     tags=["example"],
 )
 
-def run_example_taskflow(multiple_outputs=True):
-    @task()
+def run_example_taskflow():
+    @task(multiple_outputs=True)
     def getPersonDetails():
         sample_data = {
             "firstName": "Random",
