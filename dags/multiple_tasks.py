@@ -10,7 +10,7 @@ from airflow.decorators import dag, task
     tags=["example"],
 )
 
-def run_example_taskflow():
+def run_example_taskflow(multiple_outputs=True):
     @task()
     def getPersonDetails():
         sample_data = {
@@ -19,7 +19,7 @@ def run_example_taskflow():
         }
         return json.dumps(sample_data)
         
-    @task()
+    @task(multiple_outputs=True)
     def getLocationDetails():
         sample_data =  {
             "country": "Brazil",
