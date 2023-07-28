@@ -31,7 +31,7 @@ def run_example_taskflow():
     person = getPersonDetails()
     loc = getLocationDetails()
     showProfile(
-       person["firstName"]
+       person["firstName"],
        person["surName"],
        loc["country"],
        loc["city"]
